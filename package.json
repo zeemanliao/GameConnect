@@ -1,0 +1,31 @@
+{
+    "name": "GameConnect",
+    "version": "0.0.1",
+    "private": false,
+    "homepage": "https://github.com/zeemanliao/GameConnect",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zeemanliao/GameConnect.git"
+    },
+    "scripts": {
+        "test": "grunt"
+    },
+    "keywords": [
+        "rpc",
+        "server"
+    ],
+    "dependencies": {
+        "socket.io": "1.2.0",
+        "socket.io-client": "1.2.0"
+    },
+    "devDependencies": {
+        "should": "3.3.1",
+        "mocha": ">=0.0.1",
+        "muk": ">=0.0.1",
+        "grunt": "~0.4.2",
+        "grunt-mocha-test": "0.8.x",
+        "grunt-contrib-clean": "0.5.x",
+        "grunt-contrib-jshint": "~0.8.0",
+        "blanket": "~1.1.6"
+    }
+}
