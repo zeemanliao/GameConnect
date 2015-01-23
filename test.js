@@ -1,12 +1,15 @@
 var test = require('./index');
 
-var server = test.createClient("localhost", 1111);
+var client = test.createClient({name:"test", ip:"localhost", port:1111});
+var masterClient = test.createClient({name:"test", ip:"localhost", port:999});
+var i = 0;
+//run();
+client.send('test',{test:1});
+client.send('test',{test:2});
+client.send('test',{test:3});
+client.send('test',{test:4});
 
-setTimeout(run, 3000);
-function run(){
-	if (server.connected) {
-		server.emit('test',{test:'ttttt'});
-	} else {
-		console.log('server not ready');
-	}
-}
+
+client.on('test',function(data){
+	console.log('get Server Data:%s',data.test);
+});
