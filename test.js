@@ -1,6 +1,6 @@
 var test = require('./index');
 
-var client = test.createClient({name:"test", ip:"localhost", port:1111});
+var client = test.createClient({name:"test", ip:"localhost", port:8001});
 var masterClient = test.createClient({name:"test", ip:"localhost", port:999});
 var i = 0;
 //run();
