@@ -1,15 +1,11 @@
 var test = require('./index');
 
-var client = test.createClient({name:"test", ip:"localhost", port:8001});
+//var client = test.createClient({name:"test", ip:"localhost", port:8001});
 var masterClient = test.createClient({name:"test", ip:"localhost", port:999});
 var i = 0;
 //run();
-masterClient.send('test',{test:1});
+masterClient.send('login',{pwd:'123'});
 masterClient.send('test',{test:2});
 masterClient.send('test',{test:3});
 masterClient.send('test',{test:4});
 
-
-client.on('test',function(data){
-	console.log('get Server Data:%s',data.test);
-});
