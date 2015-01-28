@@ -4,8 +4,12 @@ var test = require('./index');
 var masterClient = test.createClient({name:"test", ip:"localhost", port:999});
 var i = 0;
 //run();
-masterClient.send('login',{pwd:'123'});
-masterClient.send('test',{test:2});
-masterClient.send('test',{test:3});
-masterClient.send('test',{test:4});
+masterClient.on('connect', function() {
+	masterClient.send('auth',{pwd:'123'});
+});
 
+masterClient.send('auth',{pwd:'123'});
+
+setTimeout(function(){
+	masterClient.send('test','test');
+},3000);

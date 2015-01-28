@@ -1,12 +1,31 @@
 var Connect = require('./index');
 
-var master = Connect.createServer({name:'masterServer',port:999});
+var master = Connect.createServer({name:'masterServer',port:999,auth:true});
 
+var webMaster = Connect.createServer({name:'webMasterServer',port:1978,auth:true});
 
-master.on('test', function(client, data){
-	console.log(data);
+master.on('log', function(client, data){
+	console.log('Client Name:%s,Action Name:%s',client.info.name,data.name);
+	console.log('Client Data:');
+	console.log(data.data);
+});
+webMaster.on('log', function(client, data){
+	console.log('Client Name:%s',data.name);
+	console.log('Client Data:');
+	console.log(data.data);
+});
+webMaster.on('auth', function(client, data){
+
+	client.auth = data.name =="zeeman" && data.pass =="123";
+	if (client.auth) {
+		client.statue = "start";
+		webMaster.send(client.info.name, "javascript" ,{name:"test",fun:"alert(a);\nalert(b);\nalert(c);",args:'a,b,c'});
+	}
 });
 
-master.on('login', function(client, data){
-	console.log(data);
+master.on('auth', function(client, data){
+	if (!client.auth &&
+		data.pwd == '123') {
+		client.auth = true;
+	}
 });
