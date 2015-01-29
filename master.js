@@ -14,12 +14,16 @@ webMaster.on('log', function(client, data){
 	console.log('Client Data:');
 	console.log(data.data);
 });
-webMaster.on('auth', function(client, data){
+webMaster.on('auth', function(webClient, data){
 
-	client.auth = data.name =="zeeman" && data.pass =="123";
-	if (client.auth) {
-		client.statue = "start";
-		webMaster.send(client.info.name, "javascript" ,{name:"test",fun:"alert(a);\nalert(b);\nalert(c);",args:'a,b,c'});
+	webClient.auth = data.name =="zeeman" && data.pass =="123";
+	if (webClient.auth) {
+		webClient.statue = "start";
+		//webMaster.send(client.info.name, "javascript" ,{name:"test",fun:"alert(a);\nalert(b);\nalert(c);",args:'a,b,c'});
+		for (var i in master.clients) {
+			var client = master.clients[i];
+			webMaster.send(webClient.info.name, "server", client.info);
+		}
 	}
 });
 
