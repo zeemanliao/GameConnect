@@ -1,9 +1,15 @@
-var GameConnect = require('./index');
+'use strict';
+let GameConnect = require('./index');
 
-var client = GameConnect.createClient({name:'testClient',ip:'localhost',port:999});
+let client = GameConnect.createClient({name:'testClient',ip:'localhost',port:999});
 
 
 
 client.on('connect', function(){
-	client.send('auth',{pwd:"123"});
+	console.log('connected');
+	client.send('test','test');
+});
+
+client.on('disconnect', function(){
+	console.log('server disconnect');
 });
