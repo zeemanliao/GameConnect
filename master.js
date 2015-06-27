@@ -4,8 +4,8 @@ let Connect = require('./index');
 let master = Connect.createServer({name:'masterServer',port:999});
 
 let webMaster = Connect.createServer({name:'webMasterServer',port:1978});
-master.on('before', function(client, channel, data){
-	console.log('before');
+master.on('before', function(client, cmd){
+	cmd.run = false;
 });
 master.on('test',function(client, data){
 	console.log('test1:%1',data);
