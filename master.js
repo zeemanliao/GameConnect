@@ -18,7 +18,7 @@ master.on('test',function(client, data){
 });
 master.on('test',function(client, data){
 	console.log('test4:%1',data);
-	master.send(client.name, 'test', data);
+	master.send(client.name, 'getNewID', data);
 });
 master.on('after', function(client, channel, data){
 	console.log('after');
