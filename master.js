@@ -18,9 +18,10 @@ master.on('test',function(client, data){
 });
 master.on('test',function(client, data){
 	console.log('test4:%1',data);
+	master.send(client.name, 'test', data);
 });
 master.on('after', function(client, channel, data){
-	console.log('after')
+	console.log('after');
 	/*
 	console.log('Client Name:%s,Action channel:%s',client.info.name,channel);
 	console.log('Client Data:');
