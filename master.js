@@ -1,9 +1,8 @@
-'use strict';
-let Connect = require('./index');
+var Connect = require('./index');
 
-let master = Connect.createServer({name:'masterServer',port:999});
+var master = Connect.createServer({name:'masterServer',port:999});
 
-let webMaster = Connect.createServer({name:'webMasterServer',port:1978});
+var webMaster = Connect.createServer({name:'webMasterServer',port:1978});
 master.on('before', function(client, cmd){
 	cmd.run = false;
 });

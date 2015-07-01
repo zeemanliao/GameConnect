@@ -1,7 +1,6 @@
-'use strict';
-let GameConnect = require('./index');
+var GameConnect = require('./index');
 
-let client = GameConnect.createClient({name:'testClient',ip:'localhost',port:999});
+var client = GameConnect.createClient({name:'testClient',ip:'localhost',port:999});
 client.send('start');
 client.on('test', function(data){
 	console.log("test:%1",data);
