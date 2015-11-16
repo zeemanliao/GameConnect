@@ -1,6 +1,6 @@
 {
   "name": "zeeman-game-connect",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": false,
   "homepage": "https://github.com/zeemanliao/GameConnect",
   "repository": {
@@ -16,8 +16,8 @@
     "server"
   ],
   "dependencies": {
-    "socket.io": "1.3.5",
-    "socket.io-client": "1.3.5"
+    "socket.io": "1.3.7",
+    "socket.io-client": "1.3.7"
   },
   "devDependencies": {
     "should": "3.3.1",
