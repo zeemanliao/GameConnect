@@ -1,10 +1,6 @@
 {
   "name": "zeeman-game-connect",
-<<<<<<< HEAD
   "version": "0.0.12",
-=======
-  "version": "0.0.8",
->>>>>>> ee6726a1b5c1ac8437a310fd734c169e4fb7f197
   "private": false,
   "homepage": "https://github.com/zeemanliao/GameConnect",
   "repository": {
