@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+'use strict';
+=======
+>>>>>>> 7c409cd433fef69618b487ede4e6a91db3933035
 var Connect = require('./index');
 
 var master = Connect.createServer({name:'masterServer',port:999});
