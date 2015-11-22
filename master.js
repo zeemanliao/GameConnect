@@ -1,8 +1,6 @@
 var Connect = require('./index');
 
-var master = Connect.createServer({name:'masterServer',port:999});
-
-var webMaster = Connect.createServer({name:'webMasterServer',port:1978});
+var master = Connect.createServer({name:'masterServer',port:999,kick:false});
 master.on('before', function(client, cmd){
 	cmd.run = false;
 });
@@ -27,11 +25,3 @@ master.on('after', function(client, channel, data){
 	console.log(data);
 	*/
 });
-
-webMaster.on('after', function(client, channel, data){
-	console.log('Client Name:%s',channel);
-	console.log('Client Data:');
-	console.log(data);
-});
-
-
