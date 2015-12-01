@@ -60,6 +60,7 @@ describe('All Test', function() {
         it('should create Client connect', function(done) {
             server.once('auth', function(client) {
             	testConfig.client.name.should.equal(client.name);
+                client.connected.should.equal(true);
             	done();
             });
             client = GameConnect.createClient(testConfig.client);

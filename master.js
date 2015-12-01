@@ -5,16 +5,16 @@ master.on('before', function(client, cmd){
 	cmd.run = false;
 });
 master.on('test',function(client, data){
-	console.log('test1:%1',data);
+	console.log('test1:%s',data);
 });
 master.on('test',function(client, data){
-	console.log('test2:%1',data);
+	console.log('test2:%s',data);
 });
 master.on('test',function(client, data){
-	console.log('test3:%1',data);
+	console.log('test3:%s',data);
 });
 master.on('test',function(client, data){
-	console.log('test4:%1',data);
+	console.log('test4:%s',data);
 	master.send(client.name, 'getNewID', data);
 });
 master.on('after', function(client, channel, data){

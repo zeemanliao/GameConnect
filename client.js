@@ -7,7 +7,7 @@ client.send('start');
 client.on('test', function(data){
 	console.log("test:%1",data);
 });
-*/
+
 client.on('connect', function(){
 	console.log(client.io.id);
 	console.log('connected');
@@ -17,3 +17,11 @@ client.on('connect', function(){
 client.on('disconnect', function(){
 	console.log('server disconnect');
 });
+*/
+var fun = function() {
+	console.log(client.connected);
+	setTimeout(fun,1000);
+};
+
+fun();
+
